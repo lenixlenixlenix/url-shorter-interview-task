@@ -11,6 +11,7 @@
 ```
 python -m venv venv 
 source venv/bin/activate
+pip install flask redis
 python main.py
 ```
 Also be sure to have redis running
