@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Url shortener</title>
+  </head>
+  <body>
+    <main>
+        <h1>Url shortener</h1>  
+
+        <form method="post">
+            <input type="text" name="title">
+            
+            <button type="submit" class="btn btn-primary">Get url</button>
+        </form>
+            <p>Your new url is : <code id="url_copy">{{ message }}</code></p>
+            <button class="btn btn-success" onclick="copyFunction()">Copy url</button>
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    </main>
+	<script type="text/javascript" src="{{url_for('static', filename='index.js')}}"></script>
+  </body>
+</html>
